@@ -33,6 +33,7 @@ const makeGalleryItem = ({ url, alt }) => {
   imageEl.alt = alt;
 
   galleryItemEl.append(imageEl);
-  gallery.append(galleryItemEl);
+  return galleryItemEl;
 };
-images.forEach(makeGalleryItem);
+const galleryItems = images.map(makeGalleryItem);
+gallery.append(...galleryItems);
